@@ -1,0 +1,19 @@
+extends ../application.pug
+
+block content
+  .container
+    .card.card-block
+      .row
+        .col-xs-12.col-md-8
+          h1 Edit message:
+
+          form(action="/messages/"+ message.id method="POST")
+            input(type="hidden" name="_method" value="PUT")
+            .form-group
+              label(for="title") Title
+              input(name="title" type="text" id="title" class="form-control" value=message.title)
+
+              label(for="body") body
+              input(name="body" type="text" id="body" class="form-control" value=message.body)
+
+              button(class="btn btn-success btn-lg btn-block") Update

@@ -1,0 +1,22 @@
+extends ../application.pug
+
+block content
+
+  .container
+    h1 Bulletin Board
+    hr
+    each message in messages
+      .card.card-block
+        .row
+          //- .col-md-4.hidden-md-down
+          .col-xs-12.col-md-8
+              a(href="/messages/" + message.id)
+                h2= message.title
+              p= message.body
+              .row
+                .col-xs-6.text-xs-left
+                  form(action="/delete/" + message.id method="POST")
+                    input(type="hidden" name="_method" value='DELETE')
+                    button(type="submit" class="btn btn-danger" data-message=message.id) Delete
+                    .col-xs-6
+                      a.btn.btn-primary(href="/messages/edit/" + message.id) Edit

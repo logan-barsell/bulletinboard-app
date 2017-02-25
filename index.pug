@@ -1,0 +1,18 @@
+extends ../application.pug
+
+block content
+  .container
+    h1 New Message
+    hr
+      //- post request to /new-message in main.js file
+    form(action="/new-message/" method="POST")
+      div(class="form-group")
+        label(for="message-title") Title
+        //- name attribute adds the input to column name "title"
+        input(name="title" type="text" class="form-control" id="message-title")
+      div(class="form-group")
+        label(for="message-body") body
+        //- name attribute adds the input to column name "body"
+        textarea(name="body" class="form-control" rows=5 id="message-body")
+      div(class="form-group text-xs-right")
+        button(type="submit" class="btn-lg btn-success") Submit

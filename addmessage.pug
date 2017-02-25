@@ -1,0 +1,19 @@
+html
+  head
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous")
+    link(rel="stylesheet" href="/css/application.css")
+  body    
+  .container
+      .row
+        .col-xs-6.col-xs-offset-3
+          h1 Add a message below:
+
+          form(action="/add-message" method="POST")
+            .form-group
+              label(for="title") Title
+              input(name="title" type="text" id="title" class="form-control" placeholder="Title")
+
+              label(for="body") body
+              input(name="body" type="text" id="body" class="form-control" placeholder="Body")
+
+            button(class="btn btn-success btn-lg btn-block") Submit
